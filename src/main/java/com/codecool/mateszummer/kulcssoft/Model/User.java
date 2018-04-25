@@ -1,11 +1,11 @@
-package com.codecool.mateszummer.kulcssoft.Repository;
+package com.codecool.mateszummer.kulcssoft.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "userModel")
 public class User {
 
     @Id
