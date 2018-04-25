@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class RenderController {
 
-    @Autowired
-    UserService userService;
-
-
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {

@@ -6,20 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
     @Autowired
     UserRepo userRepo;
 
-    public String deleteUser(Integer userId) {
-        try {
-            userRepo.delete(userId);
-        } catch (EmptyResultDataAccessException e) {
-            return "No user with id: " + userId + " !";
-        } catch (Exception e) {
-            return "Sorry, we are having and issue with the database! Try again later!";
-        }
-        return "ok";
+    public void deleteUser(Integer userId) {
+        userRepo.delete(userId);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepo.findAll();
+    }
+
+    public void addUser(String userName, String userEmail) {
+        userRepo.save(new User(userEmail,userName));
     }
 }
