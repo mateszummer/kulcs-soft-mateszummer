@@ -12,14 +12,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String UserEmail;
+    private String userEmail;
 
-    private String UserName;
+    private String userName;
 
+    public User(){
+
+    }
 
     public User(String userEmail, String userName) {
-        UserEmail = userEmail;
-        UserName = userName;
+        this.userEmail = userEmail;
+        this.userName = userName;
     }
 
     public Integer getId() {
@@ -27,10 +30,10 @@ public class User {
     }
 
     public String getUserEmail() {
-        return UserEmail;
+        return userEmail;
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 }

@@ -19,7 +19,7 @@ public class UserAPI {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/api/getAllUsers", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/getAllUsers", method = RequestMethod.GET)
     public String getAllUsers() {
         Gson gson = new Gson();
         try {
