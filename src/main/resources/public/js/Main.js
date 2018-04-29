@@ -2,7 +2,7 @@ Main = {
 
     showUsersList: function () {
         $.getJSON("/api/getAllUsers", function (data) {
-            $("#mainContainer").html(`<br><br><br><br><br><table id="usersTable" class="table">
+            $("#mainContainer").html(`<table id="usersTable" class="table">
                                                         <thead>
                                                           <tr>
                                                             <th>Id</th>
@@ -70,7 +70,7 @@ Main = {
     },
 
     deleteUserForm: function () {
-        $("#mainContainer").html(`<br><br><br><br><br><br><input type="text" id="userIdToDelete" placeholder="User id"><br>
+        $("#mainContainer").html(`<input type="text" id="userIdToDelete" placeholder="User id"><br>
                                          <button id="sendDeleteUserBtn" class="btn btn-success">Delete User</button>`);
         $("#userIdToDelete").change(function () {
             Main.addEventListenerToDeleteBtn($("#sendDeleteUserBtn"), $("#userIdToDelete").val(), "deleteInput")
@@ -79,8 +79,8 @@ Main = {
     },
 
     addUserForm: function () {
-        $("#mainContainer").html(`<br><br><br><br><br><br><input type="text" id="userName" placeholder="Name"><br>
-                                        <input type="text" id="userEmail" placeholder="Email">
+        $("#mainContainer").html(`<input type="text" id="userName" placeholder="Name"><br>
+                                        <input type="text" id="userEmail" placeholder="Email"><br>
                                          <button id="sendAddUserBtn" class="btn btn-success">Add User</button>`);
         $("#sendAddUserBtn").click(function () {
             $.post("/api/addUser",
